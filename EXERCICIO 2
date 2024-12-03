@@ -1,1 +1,22 @@
-main.c
+#include <stdio.h>
+#include <string.h>
+
+void inserirOrdenadoCrescente(ListaEstatica *l1, int elemento) {
+int i = l1->tamanho;
+while (i > 0 && l1->dados[i - 1] > elemento) {
+l1->dados[i] = l1->dados[i - 1];
+i--;
+}
+l1->dados[i] = elemento;
+l1->tamanho++;
+}
+
+void inserirOrdenadoDecrescente(ListaEstatica *l1, int elemento) {
+int i = l1->tamanho;
+while (i > 0 && l1->dados[i - 1] < elemento) {
+l1->dados[i] = l1->dados[i - 1];
+i--;
+}
+l1->dados[i] = elemento;
+l1->tamanho++;
+}
